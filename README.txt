@@ -1,3 +1,7 @@
+Open EJB wsdl access url.
+http://localhost:4204/esp-ejb-1.0/CalculatorBean?wsdl
+
+
 
 
 #=============== Generate EJB to WS for IBM WAS ==========================
