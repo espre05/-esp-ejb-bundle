@@ -1,0 +1,1798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6d902d64-957b-41d9-920a-a23f086a5602" activeEnvironment="Default" name="ws-ejb_localhost_IBM-Liberty" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="9cdfed95-196c-4e48-b902-2297590ac305" wsaVersion="NONE" name="InformationManagementEJBImplServiceSoapBinding" type="wsdl" bindingName="{http://impl.ejb.hns.health.ontario.ca/}InformationManagementEJBImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.wsimport.WSImportAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="wsdlLocation" value=""/>
+  <con:entry key="Use cached WSDL" value="true"/>
+  <con:entry key="Keep" value="false"/>
+  <con:entry key="Source Directory" value=""/>
+  <con:entry key="Package" value="ejb.ws.imr"/>
+  <con:entry key="Binding files" value=""/>
+  <con:entry key="WSDL" value="http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService?wsdl"/>
+  <con:entry key="Target Directory" value="D:\zz\imrtest"/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Catalog" value=""/>
+  <con:entry key="HTTP Proxy" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:definitionCache type="TEXT" rootPart="http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService?wsdl"><con:part><con:url>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="InformationManagementEJBImplService" targetNamespace="http://impl.ejb.hns.health.ontario.ca/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://impl.ejb.hns.health.ontario.ca/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://impl.ejb.hns.health.ontario.ca/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="findAppOdbTrx" type="tns:findAppOdbTrx"/>
+      <xs:element name="findAppOdbTrxResponse" type="tns:findAppOdbTrxResponse"/>
+      <xs:element name="findClaims" type="tns:findClaims"/>
+      <xs:element name="findClaimsResponse" type="tns:findClaimsResponse"/>
+      <xs:element name="findOdb" type="tns:findOdb"/>
+      <xs:element name="findOdbResponse" type="tns:findOdbResponse"/>
+      <xs:element name="findOvrpdLogBenefitYears" type="tns:findOvrpdLogBenefitYears"/>
+      <xs:element name="findOvrpdLogBenefitYearsResponse" type="tns:findOvrpdLogBenefitYearsResponse"/>
+      <xs:element name="findOvrpdlog" type="tns:findOvrpdlog"/>
+      <xs:element name="findOvrpdlogResponse" type="tns:findOvrpdlogResponse"/>
+      <xs:element name="findPayments" type="tns:findPayments"/>
+      <xs:element name="findPaymentsResponse" type="tns:findPaymentsResponse"/>
+      <xs:element name="findReceipts" type="tns:findReceipts"/>
+      <xs:element name="findReceiptsResponse" type="tns:findReceiptsResponse"/>
+      <xs:element name="findRelatedApplicationNumbers" type="tns:findRelatedApplicationNumbers"/>
+      <xs:element name="findRelatedApplicationNumbersResponse" type="tns:findRelatedApplicationNumbersResponse"/>
+      <xs:element name="getBPCSPara" type="tns:getBPCSPara"/>
+      <xs:element name="getBPCSParaResponse" type="tns:getBPCSParaResponse"/>
+      <xs:element name="getClaimDetails" type="tns:getClaimDetails"/>
+      <xs:element name="getClaimDetailsResponse" type="tns:getClaimDetailsResponse"/>
+      <xs:element name="getDedReasons" type="tns:getDedReasons"/>
+      <xs:element name="getDedReasonsResponse" type="tns:getDedReasonsResponse"/>
+      <xs:element name="getDedTypes" type="tns:getDedTypes"/>
+      <xs:element name="getDedTypesResponse" type="tns:getDedTypesResponse"/>
+      <xs:element name="getMessageCT" type="tns:getMessageCT"/>
+      <xs:element name="getMessageCTResponse" type="tns:getMessageCTResponse"/>
+      <xs:element name="getNotetextCT" type="tns:getNotetextCT"/>
+      <xs:element name="getNotetextCTResponse" type="tns:getNotetextCTResponse"/>
+      <xs:element name="getOdbRegistration" type="tns:getOdbRegistration"/>
+      <xs:element name="getOdbRegistrationBenYear" type="tns:getOdbRegistrationBenYear"/>
+      <xs:element name="getOdbRegistrationBenYearResponse" type="tns:getOdbRegistrationBenYearResponse"/>
+      <xs:element name="getOdbRegistrationResponse" type="tns:getOdbRegistrationResponse"/>
+      <xs:element name="getReceiptDetails" type="tns:getReceiptDetails"/>
+      <xs:element name="getReceiptDetailsResponse" type="tns:getReceiptDetailsResponse"/>
+      <xs:element name="searchContactIMR" type="tns:searchContactIMR"/>
+      <xs:element name="searchContactIMRResponse" type="tns:searchContactIMRResponse"/>
+      <xs:complexType name="findOvrpdLogBenefitYears">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findOvrpdLogBenefitYearsResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getOdbRegistration">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getOdbRegistrationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:recipientODB"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="recipientODB">
+        <xs:sequence>
+          <xs:element name="authorizInd" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="consent" type="tns:consent"/>
+          <xs:element minOccurs="0" name="deathDt" type="xs:dateTime"/>
+          <xs:element name="durDblDoctor" type="xs:unsignedShort"/>
+          <xs:element name="durDblDoctorLevel" type="xs:unsignedShort"/>
+          <xs:element name="durDrgToDrg" type="xs:unsignedShort"/>
+          <xs:element name="durDrgToDrgLevel1" type="xs:unsignedShort"/>
+          <xs:element name="durDrgToDrgLevel2" type="xs:unsignedShort"/>
+          <xs:element name="durDrgToDrgLevel3" type="xs:unsignedShort"/>
+          <xs:element name="durPharmSkip" type="xs:unsignedShort"/>
+          <xs:element name="durPharmSkipLevel" type="xs:unsignedShort"/>
+          <xs:element name="durRefillChk" type="xs:unsignedShort"/>
+          <xs:element name="durRefillChkLevel" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="excptNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="healthCardVerNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="healthCond" type="xs:string"/>
+          <xs:element minOccurs="0" name="healthFactor" type="xs:string"/>
+          <xs:element minOccurs="0" name="incomeAmt" type="xs:int"/>
+          <xs:element minOccurs="0" name="languagePref" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="middleName" type="xs:string"/>
+          <xs:element minOccurs="0" name="municipalityCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="odbEligNo" type="xs:long"/>
+          <xs:element name="otherCoverageFlag" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="patBirthDt" type="xs:int"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recCreateUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="recEffDt" type="xs:int"/>
+          <xs:element minOccurs="0" name="recInactiveTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recipientAddressODB" type="tns:recipientAddressODB"/>
+          <xs:element minOccurs="0" name="recipientEligibility" type="tns:recipientEligibility"/>
+          <xs:element minOccurs="0" name="recipientTDP" type="tns:recipientTDP"/>
+          <xs:element name="sex" type="xs:unsignedShort"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consent">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="consentStateId" type="xs:string"/>
+          <xs:element minOccurs="0" name="consentTypeId" type="xs:string"/>
+          <xs:element minOccurs="0" name="consentorTypeId" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="tns:consentId"/>
+          <xs:element minOccurs="0" name="recCreateUserid" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consentId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="odbEligNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="programGrp" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="tns:customTimestamp"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="customTimestamp">
+        <xs:sequence>
+          <xs:element name="milliseconds" type="xs:long"/>
+          <xs:element name="nanos" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="recipientAddressODB">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="addr1" type="xs:string"/>
+          <xs:element minOccurs="0" name="addr2" type="xs:string"/>
+          <xs:element name="addrType" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="businessPhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="businessPhoneAreaCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="businessPhoneExt" type="xs:string"/>
+          <xs:element minOccurs="0" name="city" type="xs:string"/>
+          <xs:element minOccurs="0" name="countryCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastUpdateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="lastUpdateUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="municipalityCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="odbEligNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="phone" type="xs:string"/>
+          <xs:element minOccurs="0" name="phoneAreaCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="postalCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="provCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recCreateUserid" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="recipientEligibility">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="currBenefitYr" type="xs:short"/>
+          <xs:element minOccurs="0" name="currInYrDeductAdjustAmt" type="xs:double"/>
+          <xs:element minOccurs="0" name="currInYrDeductAdjustDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="currOverpaidCreditUsed" type="xs:double"/>
+          <xs:element minOccurs="0" name="currPreEnrolExpPer1Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="currPreEnrolExpPer2Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="currPreEnrolExpPer3Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="currPreEnrolExpPer4Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="currRecipAccumAlldExp" type="xs:double"/>
+          <xs:element minOccurs="0" name="currRecipAlldExpPer1Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="currRecipAlldExpPer2Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="currRecipAlldExpPer3Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="currRecipAlldExpPer4Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="lastUpdateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="lastUpdateUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="odbEligNo" type="xs:long"/>
+          <xs:element name="odcManualPymtStatus" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="overpaidDeductCreditOs" type="xs:double"/>
+          <xs:element minOccurs="0" name="overpaidDeductCreditTotal" type="xs:double"/>
+          <xs:element minOccurs="0" name="prevInYrDeductAdjustAmt" type="xs:double"/>
+          <xs:element minOccurs="0" name="prevInYrDeductAdjustDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="prevOverpaidCreditUsed" type="xs:double"/>
+          <xs:element minOccurs="0" name="prevPreEnrolExpPer1Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="prevPreEnrolExpPer2Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="prevPreEnrolExpPer3Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="prevPreEnrolExpPer4Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="prevRecipAccumAlldExp" type="xs:double"/>
+          <xs:element minOccurs="0" name="prevRecipAlldExpPer1Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="prevRecipAlldExpPer2Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="prevRecipAlldExpPer3Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="prevRecipAlldExpPer4Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recCreateUserid" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="recipientTDP">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="covEndDt1" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="covEndDt2" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="covStartDt1" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="covStartDt2" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="incomeAmt" type="xs:int"/>
+          <xs:element minOccurs="0" name="incomeTaxYear" type="xs:short"/>
+          <xs:element minOccurs="0" name="maxReachedDate1" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="maxReachedDate2" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="odbEligNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="policyHolderId1" type="xs:long"/>
+          <xs:element minOccurs="0" name="policyHolderId2" type="xs:long"/>
+          <xs:element minOccurs="0" name="pvtInsContribution1" type="xs:double"/>
+          <xs:element minOccurs="0" name="pvtInsContribution2" type="xs:double"/>
+          <xs:element minOccurs="0" name="pvtInsId1" type="xs:string"/>
+          <xs:element minOccurs="0" name="pvtInsId2" type="xs:string"/>
+          <xs:element minOccurs="0" name="pvtInsPolicyId1" type="xs:string"/>
+          <xs:element minOccurs="0" name="pvtInsPolicyId2" type="xs:string"/>
+          <xs:element minOccurs="0" name="pvtInsPolicyNo1" type="xs:string"/>
+          <xs:element minOccurs="0" name="pvtInsPolicyNo2" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recCreateUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="recEffDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="recInactiveTimestamp" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="recInactiveUserid" type="xs:string"/>
+          <xs:element name="recipAuthFinancialInfo" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="reinstatementDate1" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="reinstatementDate2" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="sin" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDedTypes">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getDedTypesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:dedType"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="dedType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="deductTypePriority" type="xs:int"/>
+          <xs:element minOccurs="0" name="deductibleTypeCodeDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="id" type="tns:dedTypeId"/>
+          <xs:element minOccurs="0" name="lastUpdateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="lastUpdateUserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateUserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="recInactiveTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recInactiveUserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="dedTypeId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="deductibleTypeCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recEffDate" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findClaims">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg2" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findClaimsResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:claim"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="claim">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="adjudicationDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="agencyId" type="xs:long"/>
+          <xs:element minOccurs="0" name="compFeeAlld" type="xs:double"/>
+          <xs:element minOccurs="0" name="cstUpchrgAlld" type="xs:double"/>
+          <xs:element minOccurs="0" name="currRxNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="currStat" type="xs:string"/>
+          <xs:element minOccurs="0" name="deductToCollect" type="xs:double"/>
+          <xs:element minOccurs="0" name="dinPin" type="xs:long"/>
+          <xs:element minOccurs="0" name="drgCst" type="xs:double"/>
+          <xs:element minOccurs="0" name="drgCstAlld" type="xs:double"/>
+          <xs:element minOccurs="0" name="dtOfServ" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="duplicVerNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="odbEligNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="partNo" type="xs:short"/>
+          <xs:element minOccurs="0" name="profFee" type="xs:double"/>
+          <xs:element minOccurs="0" name="profFeeAlld" type="xs:double"/>
+          <xs:element minOccurs="0" name="progId" type="xs:string"/>
+          <xs:element minOccurs="0" name="pymtDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="qty" type="xs:double"/>
+          <xs:element minOccurs="0" name="seqNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="totAmtPd" type="xs:double"/>
+          <xs:element minOccurs="0" name="transCd" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getDedReasons">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getDedReasonsResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:dedRsn"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="dedRsn">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="deductibleReasonCodeDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="id" type="tns:dedRsnId"/>
+          <xs:element minOccurs="0" name="lastUpdateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="lastUpdateUserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateUserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="recInactiveTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recInactiveUserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="dedRsnId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="deductibleReasonCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recEffDate" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getClaimDetails">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:short"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:dateTime"/>
+          <xs:element name="arg2" type="xs:long"/>
+          <xs:element name="arg3" type="xs:long"/>
+          <xs:element name="arg4" type="xs:long"/>
+          <xs:element name="arg5" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getClaimDetailsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:claimDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="claimDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="adjRevrslType" type="xs:string"/>
+          <xs:element minOccurs="0" name="adjudicationDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="agencyId" type="xs:long"/>
+          <xs:element minOccurs="0" name="clmAddTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="clmAddUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="compFee" type="xs:double"/>
+          <xs:element minOccurs="0" name="compFeeAlld" type="xs:double"/>
+          <xs:element minOccurs="0" name="compTm" type="xs:short"/>
+          <xs:element minOccurs="0" name="copayToCollect" type="xs:double"/>
+          <xs:element minOccurs="0" name="cphaVerNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="cstUpchrg" type="xs:double"/>
+          <xs:element minOccurs="0" name="cstUpchrgAlld" type="xs:double"/>
+          <xs:element minOccurs="0" name="currRxNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="currStat" type="xs:string"/>
+          <xs:element minOccurs="0" name="deductToCollect" type="xs:double"/>
+          <xs:element minOccurs="0" name="dinPin" type="xs:long"/>
+          <xs:element minOccurs="0" name="drgCst" type="xs:double"/>
+          <xs:element minOccurs="0" name="drgCstAlld" type="xs:double"/>
+          <xs:element minOccurs="0" name="dtOfServ" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="dtOfServYm" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="duplicVerNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="dysSupply" type="xs:short"/>
+          <xs:element minOccurs="0" name="gc3" type="xs:string"/>
+          <xs:element minOccurs="0" name="gcnSeqNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="goodFaithInd" type="xs:string"/>
+          <xs:element minOccurs="0" name="healthCardVerNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="healthNoInd" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervdResp1" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervdResp10" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervdResp2" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervdResp3" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervdResp4" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervdResp5" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervdResp6" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervdResp7" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervdResp8" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervdResp9" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervention1" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervention10" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervention2" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervention3" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervention4" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervention5" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervention6" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervention7" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervention8" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervention9" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastUpdTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="lastUpdUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="ltcAgency" type="xs:long"/>
+          <xs:element minOccurs="0" name="medCond" type="xs:string"/>
+          <xs:element minOccurs="0" name="medReasonRef" type="xs:string"/>
+          <xs:element minOccurs="0" name="mnstryId" type="xs:string"/>
+          <xs:element minOccurs="0" name="mohPharmacistId" type="xs:long"/>
+          <xs:element minOccurs="0" name="mohPrescriberId" type="xs:long"/>
+          <xs:element minOccurs="0" name="municipCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="odbEligNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="partNo" type="xs:short"/>
+          <xs:element minOccurs="0" name="patAge" type="xs:short"/>
+          <xs:element minOccurs="0" name="patSex" type="xs:string"/>
+          <xs:element minOccurs="0" name="planCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="postalCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="prevPd" type="xs:double"/>
+          <xs:element minOccurs="0" name="prodSel" type="xs:string"/>
+          <xs:element minOccurs="0" name="profFee" type="xs:double"/>
+          <xs:element minOccurs="0" name="profFeeAlld" type="xs:double"/>
+          <xs:element minOccurs="0" name="progId" type="xs:string"/>
+          <xs:element minOccurs="0" name="pymtDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="qty" type="xs:double"/>
+          <xs:element minOccurs="0" name="reportLevel" type="xs:string"/>
+          <xs:element minOccurs="0" name="resp1" type="xs:string"/>
+          <xs:element minOccurs="0" name="resp10" type="xs:string"/>
+          <xs:element minOccurs="0" name="resp2" type="xs:string"/>
+          <xs:element minOccurs="0" name="resp3" type="xs:string"/>
+          <xs:element minOccurs="0" name="resp4" type="xs:string"/>
+          <xs:element minOccurs="0" name="resp5" type="xs:string"/>
+          <xs:element minOccurs="0" name="resp6" type="xs:string"/>
+          <xs:element minOccurs="0" name="resp7" type="xs:string"/>
+          <xs:element minOccurs="0" name="resp8" type="xs:string"/>
+          <xs:element minOccurs="0" name="resp9" type="xs:string"/>
+          <xs:element minOccurs="0" name="respStat" type="xs:string"/>
+          <xs:element minOccurs="0" name="seqNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="specServCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="theraClass" type="xs:long"/>
+          <xs:element minOccurs="0" name="totAmtPd" type="xs:double"/>
+          <xs:element minOccurs="0" name="tranPayAmt" type="xs:double"/>
+          <xs:element minOccurs="0" name="transCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="trceNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="unlistedComp" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="searchContactIMR">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:applicationCore"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="applicationCore">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="appProcessedDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="appRegistrationDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="applicationNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="applicationWithReceiptsInd" type="xs:string"/>
+          <xs:element minOccurs="0" name="benefitYear" type="xs:int"/>
+          <xs:element minOccurs="0" name="carryBackForthAppNum" type="xs:string"/>
+          <xs:element minOccurs="0" name="carryBackwardFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="carryForwardFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="carryOverAppNum1" type="xs:string"/>
+          <xs:element minOccurs="0" name="carryOverAppNum2" type="xs:string"/>
+          <xs:element minOccurs="0" name="carryOverFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="contact" type="tns:contact"/>
+          <xs:element minOccurs="0" name="delegate" type="tns:delegate"/>
+          <xs:element minOccurs="0" name="delegateChangeFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="familyRecInactiveTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="familyRecInactiveUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastUpdateModuleid" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastUpdateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="lastUpdateUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="problemCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="programGroup" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateModuleid" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recCreateUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="recInactiveModuleid" type="xs:string"/>
+          <xs:element minOccurs="0" name="recInactiveTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recInactiveUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="scpNoaIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" name="statusCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="typeCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="useDelegateIndicator" type="xs:string"/>
+          <xs:element minOccurs="0" name="warningCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="warningMsg" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="contact">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="contactAddr1" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactAddr2" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactBusinessExtension" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactBusinessPhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactChangeFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactCity" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactFirstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactHomePhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactLanguagePref" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactLastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactMiddleName" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactOdbEligNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="contactPostalCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="contactProvCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="countryCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="delegate">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="address1" type="xs:string"/>
+          <xs:element minOccurs="0" name="address2" type="xs:string"/>
+          <xs:element minOccurs="0" name="applicationNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="businessPhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="businessPhoneAreaCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="businessPhoneExtension" type="xs:string"/>
+          <xs:element minOccurs="0" name="city" type="xs:string"/>
+          <xs:element minOccurs="0" name="countryCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="homePhone" type="xs:string"/>
+          <xs:element minOccurs="0" name="homePhoneAreaCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="languagePref" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastUpdateModuleid" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastUpdateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="lastUpdateUserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="middleName" type="xs:string"/>
+          <xs:element minOccurs="0" name="municipalityCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="postalCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="provinceCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateModuleid" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recCreateUserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="recEffectiveDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="recInactiveModuleid" type="xs:string"/>
+          <xs:element minOccurs="0" name="recInactiveTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recInactiveUserId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="searchContactIMRResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:applicationCore"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findPayments">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg2" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findPaymentsResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:payment"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="payment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="amount" type="xs:double"/>
+          <xs:element minOccurs="0" name="benefitYear" type="xs:string"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="odbNum" type="xs:string"/>
+          <xs:element minOccurs="0" name="paymentDate" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findRelatedApplicationNumbers">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findRelatedApplicationNumbersResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:appNumberAndBenefitYear"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="appNumberAndBenefitYear">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="applicationNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="benefitYear" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getReceiptDetails">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:dateTime"/>
+          <xs:element name="arg2" type="xs:int"/>
+          <xs:element minOccurs="0" name="arg3" type="xs:string"/>
+          <xs:element name="arg4" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getReceiptDetailsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:receiptDetails"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="receiptDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="adjRecipientPdAmt" type="xs:double"/>
+          <xs:element minOccurs="0" name="adjudicationDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="allowRxExp" type="xs:double"/>
+          <xs:element minOccurs="0" name="applicationNumber" type="xs:string"/>
+          <xs:element name="assessFormInd" type="xs:unsignedShort"/>
+          <xs:element name="authorzdAidsPrescriber" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="batchSeqNo" type="xs:short"/>
+          <xs:element minOccurs="0" name="clmDuplicVerNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="currRxNo" type="xs:int"/>
+          <xs:element name="currStat" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="daysSupply" type="xs:short"/>
+          <xs:element name="dedCopayInd" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="dedStatusFlg" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="dinPin" type="xs:int"/>
+          <xs:element minOccurs="0" name="dtOfServ" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="dtRcvd" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="duplClmExpAmt" type="xs:double"/>
+          <xs:element minOccurs="0" name="duplicVerNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="healthCardVerNo" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="tns:receiptPK"/>
+          <xs:element minOccurs="0" name="intCds" type="xs:string"/>
+          <xs:element minOccurs="0" name="intReason" type="xs:string"/>
+          <xs:element minOccurs="0" name="intervenedRespCds" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastUpdateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="lastUpdateUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="latestDtRcvd" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="licenceIdRef" type="xs:string"/>
+          <xs:element minOccurs="0" name="maxOdbBnftExp" type="xs:double"/>
+          <xs:element minOccurs="0" name="medCond" type="xs:string"/>
+          <xs:element name="medReasonRef" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="netRecipientExp" type="xs:double"/>
+          <xs:element name="nfbFormInd" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="odbEligNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="overrideAdjudDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="overrideAdjudUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="planCd" type="xs:string"/>
+          <xs:element name="prodSel" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="progId" type="xs:string"/>
+          <xs:element minOccurs="0" name="pvtInsPrevPd" type="xs:double"/>
+          <xs:element minOccurs="0" name="pymtDt" type="xs:dateTime"/>
+          <xs:element name="pymtStat" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="qty" type="xs:double"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recCreateUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiptDinPin" type="xs:int"/>
+          <xs:element minOccurs="0" name="receiptDrugCost" type="xs:double"/>
+          <xs:element minOccurs="0" name="receiptDrugName" type="xs:string"/>
+          <xs:element minOccurs="0" name="receiptFee" type="xs:double"/>
+          <xs:element minOccurs="0" name="recipientPdAmt" type="xs:double"/>
+          <xs:element minOccurs="0" name="reimbAmt" type="xs:double"/>
+          <xs:element minOccurs="0" name="respCds" type="xs:string"/>
+          <xs:element name="respStat" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="revReasonCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="revrslInd" type="xs:int"/>
+          <xs:element minOccurs="0" name="specServCds" type="xs:string"/>
+          <xs:element minOccurs="0" name="totalReceiptPdAmt" type="xs:double"/>
+          <xs:element minOccurs="0" name="transCd" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="receiptPK">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dinPin" type="xs:int"/>
+          <xs:element minOccurs="0" name="dtOfServ" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="duplicVerNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="odbEligNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="transCd" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getOdbRegistrationBenYear">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getOdbRegistrationBenYearResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:recipientODB"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findOvrpdlog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:idType"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="idType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:string"/>
+          <xs:element minOccurs="0" name="idType" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findOvrpdlogResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:overpaidLog"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="overpaidLog">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="agencyId" type="xs:int"/>
+          <xs:element minOccurs="0" name="assessSeqNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="currRxNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="dinPin" type="xs:int"/>
+          <xs:element minOccurs="0" name="dtOfServ" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="duplicVerNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="id" type="tns:overpaidLogPK"/>
+          <xs:element minOccurs="0" name="lastUpdateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="lastUpdateUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="maxRecipReimbAmt" type="xs:double"/>
+          <xs:element minOccurs="0" name="maxRecipReimbProgId" type="xs:string"/>
+          <xs:element minOccurs="0" name="ovTriggerFlags" type="xs:string"/>
+          <xs:element minOccurs="0" name="partNo" type="xs:short"/>
+          <xs:element minOccurs="0" name="progId" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="recInactiveTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="recInactiveUserId" type="xs:string"/>
+          <xs:element minOccurs="0" name="reimbursableFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="reimbursableRefDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="seqNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="snRunTot" type="xs:double"/>
+          <xs:element minOccurs="0" name="trRunTotPeriod1Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="trRunTotPeriod2Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="trRunTotPeriod3Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="trRunTotPeriod4Ytd" type="xs:double"/>
+          <xs:element minOccurs="0" name="transCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="transTypeCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="triggerSource" type="xs:string"/>
+          <xs:element minOccurs="0" name="usedCopayToCollect" type="xs:double"/>
+          <xs:element minOccurs="0" name="usedDeductToCollect" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="overpaidLogPK">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="applicationNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="benefitYear" type="xs:string"/>
+          <xs:element minOccurs="0" name="deductIterationNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="odbEligNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="tns:customTimestamp"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getBPCSPara">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getBPCSParaResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:vbprgben"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="vbprgben">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="attributeDataType" type="xs:string"/>
+          <xs:element minOccurs="0" name="attributeDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="attributeValue" type="xs:string"/>
+          <xs:element minOccurs="0" name="endDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="id" type="tns:vbprgbenId"/>
+          <xs:element minOccurs="0" name="programGrpDescription" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="vbprgbenId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="attributeId" type="xs:string"/>
+          <xs:element minOccurs="0" name="benefitYrEndDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="benefitYrStartDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="benftYear" type="xs:int"/>
+          <xs:element minOccurs="0" name="programGrp" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getMessageCT">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getMessageCTResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:messageCT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="messageCT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="acceptStatus" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="tns:messageCTId"/>
+          <xs:element minOccurs="0" name="internalExternalFlag" type="xs:string"/>
+          <xs:element minOccurs="0" name="longMessage" type="xs:string"/>
+          <xs:element minOccurs="0" name="overrideAllowed" type="xs:string"/>
+          <xs:element minOccurs="0" name="overrideStatus" type="xs:string"/>
+          <xs:element name="priority" type="xs:short"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="recCreateUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="shortMessage" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="messageCTId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="languageCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="messageId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getNotetextCT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getNotetextCTResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:notetextCT"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="notetextCT">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="endDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="id" type="tns:notetextCTId"/>
+          <xs:element minOccurs="0" name="noteText" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="recInactiveTimestamp" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="recInactiveUserid" type="xs:string"/>
+          <xs:element minOccurs="0" name="recTermDt" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="notetextCTId">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="langCd" type="xs:string"/>
+          <xs:element minOccurs="0" name="noteEntity" type="xs:string"/>
+          <xs:element minOccurs="0" name="noteEntityType" type="xs:string"/>
+          <xs:element minOccurs="0" name="noteType" type="xs:string"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="recEffDt" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findAppOdbTrx">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg2" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findAppOdbTrxResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:appOdbTrx"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType abstract="true" name="appOdbTrx">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="adjudicationDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="agencyId" type="xs:long"/>
+          <xs:element minOccurs="0" name="appNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="currRxNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="currStat" type="xs:string"/>
+          <xs:element minOccurs="0" name="dinPin" type="xs:long"/>
+          <xs:element minOccurs="0" name="dtOfServ" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="duplicVerNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="odbEligNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="partNo" type="xs:short"/>
+          <xs:element minOccurs="0" name="plansPays" type="xs:double"/>
+          <xs:element minOccurs="0" name="progId" type="xs:string"/>
+          <xs:element minOccurs="0" name="qty" type="xs:double"/>
+          <xs:element minOccurs="0" name="recCreateTimestamp" type="tns:customTimestamp"/>
+          <xs:element minOccurs="0" name="receipientPays" type="xs:double"/>
+          <xs:element minOccurs="0" name="seqNo" type="xs:long"/>
+          <xs:element minOccurs="0" name="transCd" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findOdb">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findOdbResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:odbAppNum"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="odbAppNum">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="applicationCores" nillable="true" type="tns:applicationCore"/>
+          <xs:element minOccurs="0" name="recipientODB" type="tns:recipientODB"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findReceipts">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg2" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="arg3" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="findReceiptsResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:receipt"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="receipt">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="adjRecipientPdAmt" type="xs:double"/>
+          <xs:element minOccurs="0" name="adjudicationDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="allowRxExp" type="xs:double"/>
+          <xs:element minOccurs="0" name="applicationNumber" type="xs:string"/>
+          <xs:element minOccurs="0" name="batchSeqNo" type="xs:short"/>
+          <xs:element minOccurs="0" name="clmDuplicVerNo" type="xs:int"/>
+          <xs:element minOccurs="0" name="currRxNo" type="xs:int"/>
+          <xs:element name="currStat" type="xs:unsignedShort"/>
+          <xs:element minOccurs="0" name="id" type="tns:receiptPK"/>
+          <xs:element minOccurs="0" name="intCds" type="xs:string"/>
+          <xs:element minOccurs="0" name="progId" type="xs:string"/>
+          <xs:element minOccurs="0" name="pvtInsPrevPd" type="xs:double"/>
+          <xs:element minOccurs="0" name="pymtDt" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="qty" type="xs:double"/>
+          <xs:element minOccurs="0" name="receiptDrugCost" type="xs:double"/>
+          <xs:element minOccurs="0" name="receiptFee" type="xs:double"/>
+          <xs:element minOccurs="0" name="reimbAmt" type="xs:double"/>
+          <xs:element minOccurs="0" name="respCds" type="xs:string"/>
+          <xs:element minOccurs="0" name="totalReceiptPdAmt" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="InformationManagementException" type="tns:InformationManagementException"/>
+      <xs:complexType name="InformationManagementException">
+        <xs:sequence>
+          <xs:element name="message" nillable="true" type="xs:string"/>
+          <xs:element name="errorCode" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="findOvrpdLogBenefitYears">
+    <wsdl:part element="tns:findOvrpdLogBenefitYears" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findClaims">
+    <wsdl:part element="tns:findClaims" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDedReasons">
+    <wsdl:part element="tns:getDedReasons" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getClaimDetails">
+    <wsdl:part element="tns:getClaimDetails" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchContactIMR">
+    <wsdl:part element="tns:searchContactIMR" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findPayments">
+    <wsdl:part element="tns:findPayments" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findRelatedApplicationNumbers">
+    <wsdl:part element="tns:findRelatedApplicationNumbers" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOdbRegistrationBenYear">
+    <wsdl:part element="tns:getOdbRegistrationBenYear" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InformationManagementException">
+    <wsdl:part element="tns:InformationManagementException" name="InformationManagementException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMessageCTResponse">
+    <wsdl:part element="tns:getMessageCTResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="searchContactIMRResponse">
+    <wsdl:part element="tns:searchContactIMRResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAppOdbTrx">
+    <wsdl:part element="tns:findAppOdbTrx" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findOvrpdLogBenefitYearsResponse">
+    <wsdl:part element="tns:findOvrpdLogBenefitYearsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAppOdbTrxResponse">
+    <wsdl:part element="tns:findAppOdbTrxResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOdbRegistration">
+    <wsdl:part element="tns:getOdbRegistration" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDedTypes">
+    <wsdl:part element="tns:getDedTypes" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findOvrpdlogResponse">
+    <wsdl:part element="tns:findOvrpdlogResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findOdbResponse">
+    <wsdl:part element="tns:findOdbResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findPaymentsResponse">
+    <wsdl:part element="tns:findPaymentsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getReceiptDetails">
+    <wsdl:part element="tns:getReceiptDetails" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findClaimsResponse">
+    <wsdl:part element="tns:findClaimsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findOvrpdlog">
+    <wsdl:part element="tns:findOvrpdlog" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOdbRegistrationResponse">
+    <wsdl:part element="tns:getOdbRegistrationResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findRelatedApplicationNumbersResponse">
+    <wsdl:part element="tns:findRelatedApplicationNumbersResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getClaimDetailsResponse">
+    <wsdl:part element="tns:getClaimDetailsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getOdbRegistrationBenYearResponse">
+    <wsdl:part element="tns:getOdbRegistrationBenYearResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findReceiptsResponse">
+    <wsdl:part element="tns:findReceiptsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDedTypesResponse">
+    <wsdl:part element="tns:getDedTypesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDedReasonsResponse">
+    <wsdl:part element="tns:getDedReasonsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBPCSPara">
+    <wsdl:part element="tns:getBPCSPara" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMessageCT">
+    <wsdl:part element="tns:getMessageCT" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNotetextCTResponse">
+    <wsdl:part element="tns:getNotetextCTResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getNotetextCT">
+    <wsdl:part element="tns:getNotetextCT" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findOdb">
+    <wsdl:part element="tns:findOdb" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findReceipts">
+    <wsdl:part element="tns:findReceipts" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getReceiptDetailsResponse">
+    <wsdl:part element="tns:getReceiptDetailsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBPCSParaResponse">
+    <wsdl:part element="tns:getBPCSParaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="InformationManagementEJBImpl">
+    <wsdl:operation name="findOvrpdLogBenefitYears">
+      <wsdl:input message="tns:findOvrpdLogBenefitYears" name="findOvrpdLogBenefitYears"></wsdl:input>
+      <wsdl:output message="tns:findOvrpdLogBenefitYearsResponse" name="findOvrpdLogBenefitYearsResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOdbRegistration">
+      <wsdl:input message="tns:getOdbRegistration" name="getOdbRegistration"></wsdl:input>
+      <wsdl:output message="tns:getOdbRegistrationResponse" name="getOdbRegistrationResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDedTypes">
+      <wsdl:input message="tns:getDedTypes" name="getDedTypes"></wsdl:input>
+      <wsdl:output message="tns:getDedTypesResponse" name="getDedTypesResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findClaims">
+      <wsdl:input message="tns:findClaims" name="findClaims"></wsdl:input>
+      <wsdl:output message="tns:findClaimsResponse" name="findClaimsResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDedReasons">
+      <wsdl:input message="tns:getDedReasons" name="getDedReasons"></wsdl:input>
+      <wsdl:output message="tns:getDedReasonsResponse" name="getDedReasonsResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getClaimDetails">
+      <wsdl:input message="tns:getClaimDetails" name="getClaimDetails"></wsdl:input>
+      <wsdl:output message="tns:getClaimDetailsResponse" name="getClaimDetailsResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchContactIMR">
+      <wsdl:input message="tns:searchContactIMR" name="searchContactIMR"></wsdl:input>
+      <wsdl:output message="tns:searchContactIMRResponse" name="searchContactIMRResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findPayments">
+      <wsdl:input message="tns:findPayments" name="findPayments"></wsdl:input>
+      <wsdl:output message="tns:findPaymentsResponse" name="findPaymentsResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findRelatedApplicationNumbers">
+      <wsdl:input message="tns:findRelatedApplicationNumbers" name="findRelatedApplicationNumbers"></wsdl:input>
+      <wsdl:output message="tns:findRelatedApplicationNumbersResponse" name="findRelatedApplicationNumbersResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReceiptDetails">
+      <wsdl:input message="tns:getReceiptDetails" name="getReceiptDetails"></wsdl:input>
+      <wsdl:output message="tns:getReceiptDetailsResponse" name="getReceiptDetailsResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOdbRegistrationBenYear">
+      <wsdl:input message="tns:getOdbRegistrationBenYear" name="getOdbRegistrationBenYear"></wsdl:input>
+      <wsdl:output message="tns:getOdbRegistrationBenYearResponse" name="getOdbRegistrationBenYearResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findOvrpdlog">
+      <wsdl:input message="tns:findOvrpdlog" name="findOvrpdlog"></wsdl:input>
+      <wsdl:output message="tns:findOvrpdlogResponse" name="findOvrpdlogResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBPCSPara">
+      <wsdl:input message="tns:getBPCSPara" name="getBPCSPara"></wsdl:input>
+      <wsdl:output message="tns:getBPCSParaResponse" name="getBPCSParaResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageCT">
+      <wsdl:input message="tns:getMessageCT" name="getMessageCT"></wsdl:input>
+      <wsdl:output message="tns:getMessageCTResponse" name="getMessageCTResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getNotetextCT">
+      <wsdl:input message="tns:getNotetextCT" name="getNotetextCT"></wsdl:input>
+      <wsdl:output message="tns:getNotetextCTResponse" name="getNotetextCTResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAppOdbTrx">
+      <wsdl:input message="tns:findAppOdbTrx" name="findAppOdbTrx"></wsdl:input>
+      <wsdl:output message="tns:findAppOdbTrxResponse" name="findAppOdbTrxResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findOdb">
+      <wsdl:input message="tns:findOdb" name="findOdb"></wsdl:input>
+      <wsdl:output message="tns:findOdbResponse" name="findOdbResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findReceipts">
+      <wsdl:input message="tns:findReceipts" name="findReceipts"></wsdl:input>
+      <wsdl:output message="tns:findReceiptsResponse" name="findReceiptsResponse"></wsdl:output>
+      <wsdl:fault message="tns:InformationManagementException" name="InformationManagementException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InformationManagementEJBImplServiceSoapBinding" type="tns:InformationManagementEJBImpl">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="findOvrpdLogBenefitYears">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findOvrpdLogBenefitYears">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findOvrpdLogBenefitYearsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOdbRegistration">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getOdbRegistration">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOdbRegistrationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDedTypes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getDedTypes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDedTypesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findClaims">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findClaims">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findClaimsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDedReasons">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getDedReasons">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDedReasonsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getClaimDetails">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getClaimDetails">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getClaimDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="searchContactIMR">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="searchContactIMR">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="searchContactIMRResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findPayments">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findPayments">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findPaymentsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findRelatedApplicationNumbers">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findRelatedApplicationNumbers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findRelatedApplicationNumbersResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReceiptDetails">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getReceiptDetails">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getReceiptDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOdbRegistrationBenYear">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getOdbRegistrationBenYear">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getOdbRegistrationBenYearResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findOvrpdlog">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findOvrpdlog">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findOvrpdlogResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getBPCSPara">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getBPCSPara">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBPCSParaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageCT">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getMessageCT">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMessageCTResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getNotetextCT">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getNotetextCT">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getNotetextCTResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findAppOdbTrx">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findAppOdbTrx">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAppOdbTrxResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findOdb">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findOdb">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findOdbResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findReceipts">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findReceipts">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findReceiptsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="InformationManagementException">
+        <soap:fault name="InformationManagementException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InformationManagementEJBImplService">
+    <wsdl:port binding="tns:InformationManagementEJBImplServiceSoapBinding" name="InformationManagementEJBImplPort">
+      <soap:address location="http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint></con:endpoints><con:operation id="fd146603-5f4e-4eb8-9a10-9ffbd58e3073" isOneWay="false" action="" name="findAppOdbTrx" bindingOperationName="findAppOdbTrx" type="Request-Response" outputName="findAppOdbTrxResponse" inputName="findAppOdbTrx" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="160b8727-9aeb-4bf0-abe2-d72c5c63b4cf" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:findAppOdbTrx>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg0>gero et</arg0>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg1>sonoras imperio</arg1>\r
+         <!--Optional:-->\r
+         <!--type: dateTime-->\r
+         <arg2>2004-02-14T13:44:14</arg2>\r
+         <!--Optional:-->\r
+         <!--type: dateTime-->\r
+         <arg3>2018-11-01T01:36:46-04:00</arg3>\r
+      </impl:findAppOdbTrx>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/findAppOdbTrx"/></con:call></con:operation><con:operation id="7f5814d6-dfe6-4e39-934f-63716fb3bb3d" isOneWay="false" action="" name="findClaims" bindingOperationName="findClaims" type="Request-Response" outputName="findClaimsResponse" inputName="findClaims" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="19e57bf8-0041-43e6-ad31-2ba574419089" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:findClaims>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg0>gero et</arg0>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg1>sonoras imperio</arg1>\r
+         <!--Optional:-->\r
+         <!--type: dateTime-->\r
+         <arg2>2004-02-14T13:44:14</arg2>\r
+         <!--Optional:-->\r
+         <!--type: dateTime-->\r
+         <arg3>2018-11-01T01:36:46-04:00</arg3>\r
+      </impl:findClaims>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/findClaims"/></con:call></con:operation><con:operation id="e8c1fd71-8c50-4d2e-a260-dff2f916e280" isOneWay="false" action="" name="findOdb" bindingOperationName="findOdb" type="Request-Response" outputName="findOdbResponse" inputName="findOdb" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="313511df-acc0-47b9-9851-afb8c7b6c788" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:findOdb>\r
+         <!--type: long-->\r
+         <arg0>10</arg0>\r
+      </impl:findOdb>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/findOdb"/></con:call></con:operation><con:operation id="ee984add-ce4a-4f73-ab8a-894b4ea4e4e2" isOneWay="false" action="" name="findOvrpdlog" bindingOperationName="findOvrpdlog" type="Request-Response" outputName="findOvrpdlogResponse" inputName="findOvrpdlog" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="97af024e-32e9-427d-922d-7ab6171df8fb" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:findOvrpdlog>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <id>gero et</id>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <idType>sonoras imperio</idType>\r
+         </arg0>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg1>quae divum incedo</arg1>\r
+      </impl:findOvrpdlog>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/findOvrpdlog"/></con:call></con:operation><con:operation id="1f5475e5-70d7-4043-8658-d7a990c08dd7" isOneWay="false" action="" name="findOvrpdLogBenefitYears" bindingOperationName="findOvrpdLogBenefitYears" type="Request-Response" outputName="findOvrpdLogBenefitYearsResponse" inputName="findOvrpdLogBenefitYears" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="306a067e-ea7e-40f2-800e-d9467d2439ab" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:findOvrpdLogBenefitYears>\r
+         <!--type: long-->\r
+         <arg0>10</arg0>\r
+      </impl:findOvrpdLogBenefitYears>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/findOvrpdLogBenefitYears"/></con:call></con:operation><con:operation id="c205ac03-a66f-4ff7-93c3-84007ea60acc" isOneWay="false" action="" name="findPayments" bindingOperationName="findPayments" type="Request-Response" outputName="findPaymentsResponse" inputName="findPayments" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f7a3e089-c2b2-4bbe-9765-bb4b9e422e5d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:findPayments>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg0>gero et</arg0>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg1>sonoras imperio</arg1>\r
+         <!--Optional:-->\r
+         <!--type: dateTime-->\r
+         <arg2>2004-02-14T13:44:14</arg2>\r
+         <!--Optional:-->\r
+         <!--type: dateTime-->\r
+         <arg3>2018-11-01T01:36:46-04:00</arg3>\r
+      </impl:findPayments>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/findPayments"/></con:call></con:operation><con:operation id="dd246487-8c2e-4f5b-be01-685200a98998" isOneWay="false" action="" name="findReceipts" bindingOperationName="findReceipts" type="Request-Response" outputName="findReceiptsResponse" inputName="findReceipts" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a5f7a419-7e39-4ee6-b910-e7aaa65cfd26" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:findReceipts>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg0>gero et</arg0>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg1>sonoras imperio</arg1>\r
+         <!--Optional:-->\r
+         <!--type: dateTime-->\r
+         <arg2>2004-02-14T13:44:14</arg2>\r
+         <!--Optional:-->\r
+         <!--type: dateTime-->\r
+         <arg3>2018-11-01T01:36:46-04:00</arg3>\r
+      </impl:findReceipts>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/findReceipts"/></con:call></con:operation><con:operation id="992ce019-783c-4b8f-ad24-3046b1f3bd3a" isOneWay="false" action="" name="findRelatedApplicationNumbers" bindingOperationName="findRelatedApplicationNumbers" type="Request-Response" outputName="findRelatedApplicationNumbersResponse" inputName="findRelatedApplicationNumbers" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0a9f1441-9c8d-4474-83d5-92afde969e51" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:findRelatedApplicationNumbers>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg0>gero et</arg0>\r
+      </impl:findRelatedApplicationNumbers>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/findRelatedApplicationNumbers"/></con:call></con:operation><con:operation id="8eead528-8630-4377-9ab3-dc1dd590a6b9" isOneWay="false" action="" name="getBPCSPara" bindingOperationName="getBPCSPara" type="Request-Response" outputName="getBPCSParaResponse" inputName="getBPCSPara" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6b5e3914-1587-49ae-8afa-9d1838848f2a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:getBPCSPara/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/getBPCSPara"/></con:call></con:operation><con:operation id="19137c39-ebb3-4531-88dd-305762e31457" isOneWay="false" action="" name="getClaimDetails" bindingOperationName="getClaimDetails" type="Request-Response" outputName="getClaimDetailsResponse" inputName="getClaimDetails" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="10ffdd12-6feb-4ede-bdd5-17abb582c79a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:getClaimDetails>\r
+         <!--type: short-->\r
+         <arg0>1</arg0>\r
+         <!--Optional:-->\r
+         <!--type: dateTime-->\r
+         <arg1>2008-09-28T21:49:45</arg1>\r
+         <!--type: long-->\r
+         <arg2>10</arg2>\r
+         <!--type: long-->\r
+         <arg3>10</arg3>\r
+         <!--type: long-->\r
+         <arg4>10</arg4>\r
+         <!--type: long-->\r
+         <arg5>10</arg5>\r
+      </impl:getClaimDetails>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/getClaimDetails"/></con:call></con:operation><con:operation id="9b1fac32-0e35-4254-a711-4275152b969b" isOneWay="false" action="" name="getDedReasons" bindingOperationName="getDedReasons" type="Request-Response" outputName="getDedReasonsResponse" inputName="getDedReasons" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="29285917-ff69-4d5e-9ba1-d81c3777426b" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:getDedReasons/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/getDedReasons"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="712ae673-cdea-4c18-a338-cd4b66e9e552" isOneWay="false" action="" name="getDedTypes" bindingOperationName="getDedTypes" type="Request-Response" outputName="getDedTypesResponse" inputName="getDedTypes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="286e5105-ec65-4e2e-abc4-c42efacbc164" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:getDedTypes/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/getDedTypes"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a764d32b-4c4b-4f21-b105-542642ed4086" isOneWay="false" action="" name="getMessageCT" bindingOperationName="getMessageCT" type="Request-Response" outputName="getMessageCTResponse" inputName="getMessageCT" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2ccca1b9-146a-453e-b4ff-eda661a3f4c8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:getMessageCT/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/getMessageCT"/></con:call></con:operation><con:operation id="f528ef52-449d-458f-b7ae-f81e1ee18d64" isOneWay="false" action="" name="getNotetextCT" bindingOperationName="getNotetextCT" type="Request-Response" outputName="getNotetextCTResponse" inputName="getNotetextCT" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="686faf51-0a8d-457e-81f4-26c4e950ba34" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:getNotetextCT>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg0>gero et</arg0>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg1>sonoras imperio</arg1>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg2>quae divum incedo</arg2>\r
+      </impl:getNotetextCT>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/getNotetextCT"/></con:call></con:operation><con:operation id="b178e283-0bd8-4ace-9c82-5f9245c82405" isOneWay="false" action="" name="getOdbRegistration" bindingOperationName="getOdbRegistration" type="Request-Response" outputName="getOdbRegistrationResponse" inputName="getOdbRegistration" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="abc6bdc5-720d-4d10-b842-9d0c8864f226" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:getOdbRegistration>\r
+         <!--type: long-->\r
+         <arg0>10</arg0>\r
+      </impl:getOdbRegistration>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/getOdbRegistration"/></con:call></con:operation><con:operation id="a148bb0a-f54f-414a-8c4e-6a17e5ef1b42" isOneWay="false" action="" name="getOdbRegistrationBenYear" bindingOperationName="getOdbRegistrationBenYear" type="Request-Response" outputName="getOdbRegistrationBenYearResponse" inputName="getOdbRegistrationBenYear" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="458f23f9-afdc-437c-8616-72ca029f4331" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:getOdbRegistrationBenYear>\r
+         <!--type: long-->\r
+         <arg0>10</arg0>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg1>gero et</arg1>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg2>sonoras imperio</arg2>\r
+      </impl:getOdbRegistrationBenYear>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/getOdbRegistrationBenYear"/></con:call></con:operation><con:operation id="1bdf7da6-976f-4a37-afa7-1029331f919e" isOneWay="false" action="" name="getReceiptDetails" bindingOperationName="getReceiptDetails" type="Request-Response" outputName="getReceiptDetailsResponse" inputName="getReceiptDetails" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0fb8cd56-0da1-4249-8129-86a400ce6eb0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:getReceiptDetails>\r
+         <!--type: long-->\r
+         <arg0>10</arg0>\r
+         <!--Optional:-->\r
+         <!--type: dateTime-->\r
+         <arg1>2008-09-28T21:49:45</arg1>\r
+         <!--type: int-->\r
+         <arg2>3</arg2>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg3>aeoliam venit</arg3>\r
+         <!--type: int-->\r
+         <arg4>3</arg4>\r
+      </impl:getReceiptDetails>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/getReceiptDetails"/></con:call></con:operation><con:operation id="40e04f27-19d6-49f2-9f06-32d5fe889b61" isOneWay="false" action="" name="searchContactIMR" bindingOperationName="searchContactIMR" type="Request-Response" outputName="searchContactIMRResponse" inputName="searchContactIMR" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4f27a948-357e-46ac-a577-59cb8d851a88" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9082/bpcs_ejb-0.0.15/InformationManagementEJBImplService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:impl="http://impl.ejb.hns.health.ontario.ca/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <impl:searchContactIMR>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <!--type: dateTime-->\r
+            <appProcessedDate>2008-09-28T21:49:45</appProcessedDate>\r
+            <!--Optional:-->\r
+            <!--type: dateTime-->\r
+            <appRegistrationDate>2014-09-18T19:18:33</appRegistrationDate>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <applicationNumber>verrantque per auras</applicationNumber>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <applicationWithReceiptsInd>per auras</applicationWithReceiptsInd>\r
+            <!--Optional:-->\r
+            <!--type: int-->\r
+            <benefitYear>3</benefitYear>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <carryBackForthAppNum>circum claustra</carryBackForthAppNum>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <carryBackwardFlag>nimborum in</carryBackwardFlag>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <carryForwardFlag>foedere certo</carryForwardFlag>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <carryOverAppNum1>profundum quippe ferant</carryOverAppNum1>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <carryOverAppNum2>et carcere</carryOverAppNum2>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <carryOverFlag>iovis rapidum iaculata</carryOverFlag>\r
+            <!--Optional:-->\r
+            <contact>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <contactAddr1>speluncis abdidit</contactAddr1>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <contactAddr2>bella gero et</contactAddr2>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <contactBusinessExtension>flammas turbine</contactBusinessExtension>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <contactBusinessPhone>hoc metuens</contactBusinessPhone>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <contactChangeFlag>ac vinclis</contactChangeFlag>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <contactCity>speluncis abdidit</contactCity>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <contactFirstName>aris imponet honorem</contactFirstName>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <contactHomePhone>praeterea aut</contactHomePhone>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <contactLanguagePref>claustra fremunt</contactLanguagePref>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <contactLastName>imperio premit</contactLastName>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <contactMiddleName>quisquam numen</contactMiddleName>\r
+               <!--Optional:-->\r
+               <!--type: long-->\r
+               <contactOdbEligNo>10</contactOdbEligNo>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <contactPostalCd>ac vinclis</contactPostalCd>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <contactProvCd>ac vinclis</contactProvCd>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <countryCode>pectore flammas</countryCode>\r
+            </contact>\r
+            <!--Optional:-->\r
+            <delegate>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <address1>pectore flammas</address1>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <address2>annos bella gero</address2>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <applicationNumber>certo et</applicationNumber>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <businessPhone>rates evertitque aequora</businessPhone>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <businessPhoneAreaCode>volutans nimborum in</businessPhoneAreaCode>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <businessPhoneExtension>faciat maria</businessPhoneExtension>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <city>et quisquam</city>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <countryCode>et soror</countryCode>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <firstName>annos bella gero</firstName>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <homePhone>ventos tempestatesque sonoras</homePhone>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <homePhoneAreaCode>regina iovisque</homePhoneAreaCode>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <languagePref>rapidum iaculata</languagePref>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <lastName>insuper altos</lastName>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <lastUpdateModuleid>cum murmure</lastUpdateModuleid>\r
+               <!--Optional:-->\r
+               <lastUpdateTimestamp>\r
+                  <!--type: long-->\r
+                  <milliseconds>10</milliseconds>\r
+                  <!--type: int-->\r
+                  <nanos>3</nanos>\r
+               </lastUpdateTimestamp>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <lastUpdateUserId>in patriam</lastUpdateUserId>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <middleName>abdidit atris hoc</middleName>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <municipalityCode>coniunx una cum</municipalityCode>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <postalCode>ipsa iovis</postalCode>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <provinceCode>frenat illi indignantes</provinceCode>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <recCreateModuleid>nimborum in</recCreateModuleid>\r
+               <!--Optional:-->\r
+               <recCreateTimestamp>\r
+                  <!--type: long-->\r
+                  <milliseconds>10</milliseconds>\r
+                  <!--type: int-->\r
+                  <nanos>3</nanos>\r
+               </recCreateTimestamp>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <recCreateUserId>mollitque animos</recCreateUserId>\r
+               <!--Optional:-->\r
+               <!--type: dateTime-->\r
+               <recEffectiveDate>2000-02-21T09:46:14-05:00</recEffectiveDate>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <recInactiveModuleid>ferant rapidi secum</recInactiveModuleid>\r
+               <!--Optional:-->\r
+               <recInactiveTimestamp>\r
+                  <!--type: long-->\r
+                  <milliseconds>10</milliseconds>\r
+                  <!--type: int-->\r
+                  <nanos>3</nanos>\r
+               </recInactiveTimestamp>\r
+               <!--Optional:-->\r
+               <!--type: string-->\r
+               <recInactiveUserId>nimborum in</recInactiveUserId>\r
+            </delegate>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <delegateChangeFlag>vasto rex</delegateChangeFlag>\r
+            <!--Optional:-->\r
+            <familyRecInactiveTimestamp>\r
+               <!--type: long-->\r
+               <milliseconds>10</milliseconds>\r
+               <!--type: int-->\r
+               <nanos>3</nanos>\r
+            </familyRecInactiveTimestamp>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <familyRecInactiveUserid>flammato secum</familyRecInactiveUserid>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <lastUpdateModuleid>tempestatesque sonoras</lastUpdateModuleid>\r
+            <!--Optional:-->\r
+            <lastUpdateTimestamp>\r
+               <!--type: long-->\r
+               <milliseconds>10</milliseconds>\r
+               <!--type: int-->\r
+               <nanos>3</nanos>\r
+            </lastUpdateTimestamp>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <lastUpdateUserid>tenens mollitque</lastUpdateUserid>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <problemCode>premit ac</problemCode>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <programGroup>iras ni</programGroup>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <recCreateModuleid>nubibus ignem</recCreateModuleid>\r
+            <!--Optional:-->\r
+            <recCreateTimestamp>\r
+               <!--type: long-->\r
+               <milliseconds>10</milliseconds>\r
+               <!--type: int-->\r
+               <nanos>3</nanos>\r
+            </recCreateTimestamp>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <recCreateUserid>austris aeoliam venit</recCreateUserid>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <recInactiveModuleid>qui foedere</recInactiveModuleid>\r
+            <!--Optional:-->\r
+            <recInactiveTimestamp>\r
+               <!--type: long-->\r
+               <milliseconds>10</milliseconds>\r
+               <!--type: int-->\r
+               <nanos>3</nanos>\r
+            </recInactiveTimestamp>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <recInactiveUserid>atris hoc metuens</recInactiveUserid>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <scpNoaIndicator>atris hoc</scpNoaIndicator>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <statusCode>animos et temperat</statusCode>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <typeCode>sonoras imperio</typeCode>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <useDelegateIndicator>patriam loca</useDelegateIndicator>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <warningCode>montis circum</warningCode>\r
+            <!--Optional:-->\r
+            <!--type: string-->\r
+            <warningMsg>laxas sciret dare</warningMsg>\r
+         </arg0>\r
+      </impl:searchContactIMR>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ejb.hns.health.ontario.ca/InformationManagementEJBImpl/searchContactIMR"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

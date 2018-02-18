@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="HelloBeanService" targetNamespace="http://ejb.esp/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:tns="http://ejb.esp/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://ejb.esp/" schemaLocation="HelloBeanService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="hello">
+    <part name="parameters" element="tns:hello">
+    </part>
+  </message>
+  <message name="helloResponse">
+    <part name="parameters" element="tns:helloResponse">
+    </part>
+  </message>
+  <portType name="HelloBean">
+    <operation name="hello">
+      <input message="tns:hello" wsam:Action="http://ejb.esp/HelloBean/helloRequest">
+    </input>
+      <output message="tns:helloResponse" wsam:Action="http://ejb.esp/HelloBean/helloResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="HelloBeanPortBinding" type="tns:HelloBean">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="hello">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="HelloBeanService">
+    <port name="HelloBeanPort" binding="tns:HelloBeanPortBinding">
+      <soap:address location="http://localhost:9080/esp-ejb-1.0/HelloBeanService"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="CalculatorBeanService" targetNamespace="http://ejb.esp/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:tns="http://ejb.esp/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://ejb.esp/" schemaLocation="CalculatorBeanService_schema1.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="calculateResponse">
+    <part name="parameters" element="tns:calculateResponse">
+    </part>
+  </message>
+  <message name="calculate">
+    <part name="parameters" element="tns:calculate">
+    </part>
+  </message>
+  <portType name="CalculatorService">
+    <operation name="calculate">
+      <input message="tns:calculate" wsam:Action="http://ejb.esp/CalculatorService/calculateRequest">
+    </input>
+      <output message="tns:calculateResponse" wsam:Action="http://ejb.esp/CalculatorService/calculateResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="CalculatorServicePortBinding" type="tns:CalculatorService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="calculate">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="CalculatorBeanService">
+    <port name="CalculatorServicePort" binding="tns:CalculatorServicePortBinding">
+      <soap:address location="http://localhost:9080/esp-ejb-1.0/CalculatorBeanService"/>
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>esp-ejb</groupId>
+	<artifactId>esp-ejb-sboot</artifactId>
+	<version>1.0</version>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<!-- codegen.proj>nonstop</codegen.proj>
+		<codegen.module>sm</codegen.module -->
+		<codegen.proj>esp.ejb</codegen.proj>
+		<codegen.module>calc</codegen.module>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.jvnet.jaxb2_commons</groupId>
+			<artifactId>jaxb2-basics-runtime</artifactId>
+			<version>1.11.1</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<!-- plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>build-helper-maven-plugin</artifactId> 
+				<version>1.4</version> <executions> <execution> <id>add-wsdl-source</id> 
+				<phase>generate-sources</phase> <goals> <goal>add-source</goal> </goals> 
+				<configuration> <sources> <source>${basedir}/src-gen/main/java</source> </sources> 
+				</configuration> </execution> <execution> <id>add-wsdl-test-source</id> <phase>generate-sources</phase> 
+				<goals> <goal>add-test-source</goal> </goals> <configuration> <sources> <source>${basedir}/src-gen/test/java</source> 
+				</sources> </configuration> </execution> <execution> <id>add-wsdl-resource</id> 
+				<phase>generate-sources</phase> <goals> <goal>add-resource</goal> </goals> 
+				<configuration> <resources> <resource> <directory>${basedir}/src-gen/main/resources</directory> 
+				<targetPath>target/classes</targetPath> </resource> </resources> </configuration> 
+				</execution> </executions> </plugin -->
+			<!-- maven-jaxb2-plugin -->
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<version>0.13.3</version>
+				<executions>
+					<execution>
+						<id>a</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaLanguage>WSDL</schemaLanguage>
+							<generatePackage>${codegen.proj}.ws.${codegen.module}</generatePackage>
+							<schemaDirectory>${project.basedir}/src/main/resources/${codegen.proj}-wsdl/${codegen.module}</schemaDirectory>
+
+							<schemaIncludes>
+								<include>**/*.wsdl</include>
+							</schemaIncludes>
+							<bindingDirectory>${project.basedir}/src/main/resources/${codegen.proj}-wsdl</bindingDirectory>
+							<bindingIncludes>
+								<include>*.xjb</include>
+							</bindingIncludes>
+							<generateDirectory>${project.basedir}/src-gen/main/java</generateDirectory>
+							<cleanPackageDirectories>true</cleanPackageDirectories>
+							<forceRegenerate>false</forceRegenerate>
+
+							<encoding>${project.build.sourceEncoding}</encoding>
+							<specVersion>2.2</specVersion>
+
+							<extension>true</extension>
+							<strict>true</strict>
+							<verbose>true</verbose>
+							<addCompileSourceRoot>true</addCompileSourceRoot>
+							<addTestCompileSourceRoot>false</addTestCompileSourceRoot>
+							<contentForWildcard>false</contentForWildcard>
+
+							<produces>
+								<pattern>**/*.*</pattern>
+							</produces>
+
+							<otherDependsIncludes>
+								<pattern>**/*.*</pattern>
+							</otherDependsIncludes>
+							<otherDependsExcludes>
+								<pattern>**/*.xs</pattern>
+							</otherDependsExcludes>
+							<extension>true</extension>
+							<args>
+								<arg>-XtoString</arg>
+								<arg>-Xequals</arg>
+								<arg>-XhashCode</arg>
+								<arg>-Xcopyable</arg>
+								<arg>-XautoNameResolution</arg>
+								<arg>-Xannotate</arg>
+							</args>
+							<plugins>
+								<plugin>
+									<groupId>org.jvnet.jaxb2_commons</groupId>
+									<artifactId>jaxb2-basics</artifactId>
+									<version>1.11.1</version>
+								</plugin>
+								<plugin>
+									<groupId>org.jvnet.jaxb2_commons</groupId>
+									<artifactId>jaxb2-basics-annotate</artifactId>
+									<version>1.0.4</version>
+								</plugin>
+							</plugins>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
