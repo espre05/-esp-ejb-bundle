@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ejb.impl.svc.esp/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http"
+	xmlns:ns1="http://hello.svc.esp/" name="HelloBeanService"
+	targetNamespace="http://ejb.impl.svc.esp/">
+	<wsdl:import
+		location="http://127.0.0.1:4204/esp-ejb-1.0/HelloBean?wsdl=HelloService.wsdl"
+		namespace="http://hello.svc.esp/">
+	</wsdl:import>
+	<wsdl:binding name="HelloBeanServiceSoapBinding" type="ns1:HelloService">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="hello">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="hello">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="helloResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="HelloBeanService">
+		<wsdl:port binding="tns:HelloBeanServiceSoapBinding" name="HelloServicePort">
+			<soap:address location="http://127.0.0.1:4204/esp-ejb-1.0/HelloBean" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

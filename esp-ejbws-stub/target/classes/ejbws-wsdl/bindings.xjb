@@ -1,0 +1,21 @@
+<jaxws:bindings 
+          xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+          xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+          
+          >
+          <!-- Better wrap: https://myarch.com/wrappernon-wrapper-web-service-styles-things-you-need-to-know/-->
+          <enableWrapperStyle>true</enableWrapperStyle>
+  <jaxws:bindings  >
+      <jxb:globalBindings xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <!-- To convert XMLGregorianCalendar to java.util.Date : requires dep org.apache.cxf.xjc-utils:cxf-xjc-runtime -->
+        <jxb:javaType name="java.util.Date" xmlType="xs:dateTime"
+                      parseMethod="org.apache.cxf.xjc.runtime.DataTypeAdapter.parseDateTime"
+                      printMethod="org.apache.cxf.xjc.runtime.DataTypeAdapter.printDateTime"/>
+      </jxb:globalBindings>
+  </jaxws:bindings>
+</jaxws:bindings>
+<!-- node="wsdl:definitions/wsdl:types/xs:schema[@targetNamespace='THE_NAMESPACE_OF_YOUR_SCHEMA']"
+node="wsdl:definitions/wsdl:types/xs:schema[@targetNamespace='http://calc.svc.esp']"
+ -->

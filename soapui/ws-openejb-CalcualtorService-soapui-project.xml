@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="bff2889c-46fd-4d2a-a8b5-23fcbdd5c9c4" activeEnvironment="Default" name="ws-openejb_CalcualtorService" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="5cb3b736-8113-4612-ae7a-7b8b884eeafd" wsaVersion="NONE" name="CalculatorBeanServiceSoapBinding" type="wsdl" bindingName="{http://ejb.impl.svc.esp/}CalculatorBeanServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://127.0.0.1:4204/esp-ejb-1.0/CalculatorBean?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://127.0.0.1:4204/esp-ejb-1.0/CalculatorBean?wsdl"><con:part><con:url>http://127.0.0.1:4204/esp-ejb-1.0/CalculatorBean?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CalculatorBeanService" targetNamespace="http://ejb.impl.svc.esp/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ejb.impl.svc.esp/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://calc.svc.esp/">
+  <wsdl:import location="http://127.0.0.1:4204/esp-ejb-1.0/CalculatorBean?wsdl=CalculatorService.wsdl" namespace="http://calc.svc.esp/"></wsdl:import>
+  <wsdl:binding name="CalculatorBeanServiceSoapBinding" type="ns1:CalculatorService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="calculate">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="calculate">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="calculateResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="CalculatorException">
+        <soap:fault name="CalculatorException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculatorBeanService">
+    <wsdl:port binding="tns:CalculatorBeanServiceSoapBinding" name="CalculatorServicePort">
+      <soap:address location="http://127.0.0.1:4204/esp-ejb-1.0/CalculatorBean"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://127.0.0.1:4204/esp-ejb-1.0/CalculatorBean?wsdl=CalculatorService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CalculatorService" targetNamespace="http://calc.svc.esp/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://calc.svc.esp/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://calc.svc.esp/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://calc.svc.esp/">
+      <xs:element name="calculate" type="tns:calculate"/>
+      <xs:element name="calculateResponse" type="tns:calculateResponse"/>
+      <xs:complexType name="calculate">
+        <xs:sequence>
+          <xs:element name="calculateRequest" type="tns:calculateRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="calculateRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="inputData" type="tns:inputData"/>
+          <xs:element minOccurs="0" name="statsOperation" type="tns:statisticalOperation"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="inputData">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="data" nillable="true" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="calculateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:calculateResult"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="calculateResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="result" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="statisticalOperation">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="SUM"/>
+          <xs:enumeration value="AVERAGE"/>
+          <xs:enumeration value="MEAN"/>
+          <xs:enumeration value="MEDIAN"/>
+          <xs:enumeration value="MODE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="CalculatorException" type="tns:CalculatorException"/>
+      <xs:complexType name="CalculatorException">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="CalculatorException">
+    <wsdl:part element="ns1:CalculatorException" name="CalculatorException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="calculateResponse">
+    <wsdl:part element="ns1:calculateResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="calculate">
+    <wsdl:part element="ns1:calculate" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CalculatorService">
+    <wsdl:operation name="calculate">
+      <wsdl:input message="ns1:calculate" name="calculate"></wsdl:input>
+      <wsdl:output message="ns1:calculateResponse" name="calculateResponse"></wsdl:output>
+      <wsdl:fault message="ns1:CalculatorException" name="CalculatorException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:4204/esp-ejb-1.0/CalculatorBean</con:endpoint></con:endpoints><con:operation id="d9c94025-d461-42fe-a167-adf76a150469" isOneWay="false" action="" name="calculate" bindingOperationName="calculate" type="Request-Response" outputName="calculateResponse" inputName="calculate" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c69a62ff-1a70-425d-8ede-19c33c0cdbbb" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:4204/esp-ejb-1.0/CalculatorBean</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:calc="http://calc.svc.esp/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <calc:calculate>\r
+         <calculateRequest>\r
+            <inputData>\r
+               <data>3</data>\r
+               <data>3</data>
+               <data>3</data>
+            </inputData>\r
+            <!--type: statisticalOperation - enumeration: [SUM,AVERAGE,MEAN,MEDIAN,MODE]-->\r
+            <statsOperation>SUM</statsOperation>\r
+         </calculateRequest>\r
+      </calc:calculate>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ejb.impl.svc.esp/CalculatorService/calculate"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="e5bad0cc-63b1-487d-add5-8143f92bee63" wsaVersion="NONE" name="HelloBeanServiceSoapBinding" type="wsdl" bindingName="{http://ejb.impl.svc.esp/}HelloBeanServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://127.0.0.1:4204/esp-ejb-1.0/HelloBean?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://127.0.0.1:4204/esp-ejb-1.0/HelloBean?wsdl"><con:part><con:url>http://127.0.0.1:4204/esp-ejb-1.0/HelloBean?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="HelloBeanService" targetNamespace="http://ejb.impl.svc.esp/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ejb.impl.svc.esp/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://schemas.xmlsoap.org/soap/http" xmlns:ns1="http://hello.svc.esp/">
+  <wsdl:import location="http://127.0.0.1:4204/esp-ejb-1.0/HelloBean?wsdl=HelloService.wsdl" namespace="http://hello.svc.esp/"></wsdl:import>
+  <wsdl:binding name="HelloBeanServiceSoapBinding" type="ns1:HelloService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="hello">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="hello">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="helloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloBeanService">
+    <wsdl:port binding="tns:HelloBeanServiceSoapBinding" name="HelloServicePort">
+      <soap:address location="http://127.0.0.1:4204/esp-ejb-1.0/HelloBean"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://127.0.0.1:4204/esp-ejb-1.0/HelloBean?wsdl=HelloService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="HelloService" targetNamespace="http://hello.svc.esp/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://hello.svc.esp/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://hello.svc.esp/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://hello.svc.esp/">
+      <xs:element name="hello" type="tns:hello"/>
+      <xs:element name="helloResponse" type="tns:helloResponse"/>
+      <xs:complexType name="hello">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="helloResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="hello">
+    <wsdl:part element="ns1:hello" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="helloResponse">
+    <wsdl:part element="ns1:helloResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="HelloService">
+    <wsdl:operation name="hello">
+      <wsdl:input message="ns1:hello" name="hello"></wsdl:input>
+      <wsdl:output message="ns1:helloResponse" name="helloResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:4204/esp-ejb-1.0/HelloBean</con:endpoint></con:endpoints><con:operation id="23bd70d9-cee0-4f54-bd41-81b659927021" isOneWay="false" action="" name="hello" bindingOperationName="hello" type="Request-Response" outputName="helloResponse" inputName="hello" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b9723cfa-b1b7-4829-b58e-604faf2d2af1" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:4204/esp-ejb-1.0/HelloBean</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hel="http://hello.svc.esp/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <hel:hello>\r
+         <!--Optional:-->\r
+         <!--type: string-->\r
+         <arg0>gero et</arg0>\r
+      </hel:hello>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ejb.impl.svc.esp/HelloService/hello"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

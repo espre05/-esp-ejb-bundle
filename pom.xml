@@ -28,5 +28,6 @@
 		<module>esp-ejb</module>
 		<module>esp-ejbClient</module>	
 		<module>esp-ejbEAR</module>
+		<module>esp-ejbws-stub</module>
 	</modules>
 </project>

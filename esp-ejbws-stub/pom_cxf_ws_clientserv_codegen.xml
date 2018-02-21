@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>esp-ejbws-stub</groupId>
+	<artifactId>esp-ejbws-stub</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<codegen.proj>ejbws</codegen.proj><!-- trnslates to : src-gen/main/resources/ejbws-wsdl/openejb -->
+		<codegen.module>openejb</codegen.module> <!-- also transltes to ejbws.openejb.all -->
+
+		<cxf.version>3.2.1</cxf.version>
+		<cxf-xjc.version>${cxf.version}</cxf-xjc.version>
+		<jaxb-xjc.version>1.11.1</jaxb-xjc.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.jvnet.jaxb2_commons</groupId>
+			<artifactId>jaxb2-basics-runtime</artifactId>
+			<version>${jaxb-xjc.version}</version>
+		</dependency>
+		<dependency>
+		   <groupId>org.apache.cxf.xjc-utils</groupId>
+		   <artifactId>cxf-xjc-runtime</artifactId>
+		   <version>${cxf.version}</version>
+		</dependency>
+		 <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf.version}</version>
+				<executions>
+					<execution>
+						<id>generate-sources</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<!-- resources/ejbws-wsdl/openejb.all/*.wsdl -->
+							<wsdlRoot>${project.basedir}/src/main/resources/ejbws-wsdl/openejb</wsdlRoot>
+							<includes>
+								<include>*.wsdl</include>
+							</includes>
+							<wsdlOptions>
+								<!--wsdlOption>
+									<!-wsdl>${project.basedir}/src/main/resources/${codegen.proj}-wsdl/${codegen.module}</wsdl->
+									<serviceName>My${codegen.module}WSDLService</serviceName>
+								</wsdlOption -->
+							</wsdlOptions>
+							<defaultOptions>
+								<bindingFiles>
+									<bindingFile>${project.basedir}/src/main/resources/${codegen.proj}-wsdl/bindings.xjb</bindingFile>
+								</bindingFiles>
+								<noAddressBinding>true</noAddressBinding>
+								<extraargs>
+									<!--extraarg>-impl</extraarg-->
+									<!--extraarg>-all</extraarg --> <!--Generates all starting point code: types, service proxy, service interface, server mainline, client mainline, implementation object, and an Ant build.xml file. -->
+									<extraarg>-client</extraarg>
+									<extraarg>-verbose</extraarg>
+									<extraarg>-validate</extraarg><!--validating the WSDL before generating the code. -->
+									<extraarg>-xjc-Xts</extraarg>
+								</extraargs>
+							</defaultOptions>
+							<sourceRoot>${project.basedir}/src-gen/main/java</sourceRoot>
+						</configuration>
+						<goals>
+							<goal>wsdl2java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies><!-- Extensions -->
+				    <dependency>
+				        <groupId>org.apache.cxf.xjcplugins</groupId>
+				        <artifactId>cxf-xjc-boolean</artifactId>
+				        <version>${cxf-xjc.version}</version>
+				     </dependency>
+				    <dependency>
+				        <groupId>org.apache.cxf.xjcplugins</groupId>
+				        <artifactId>cxf-xjc-bug671</artifactId>
+				        <version>${cxf-xjc.version}</version>
+				     </dependency>
+				     <dependency>
+				        <groupId>org.apache.cxf.xjcplugins</groupId>
+				        <artifactId>cxf-xjc-dv</artifactId>
+				        <version>${cxf-xjc.version}</version>
+				     </dependency>
+				    <dependency>
+				        <groupId>org.apache.cxf.xjcplugins</groupId>
+				        <artifactId>cxf-xjc-ts</artifactId>
+				        <version>${cxf-xjc.version}</version>
+				     </dependency>
+				    <dependency>
+				        <groupId>org.apache.cxf.xjcplugins</groupId>
+				        <artifactId>cxf-xjc-ts</artifactId>
+				        <version>${cxf-xjc.version}</version>
+				     </dependency>
+				     <dependency>
+					    <groupId>net.java.dev.jaxb2-commons</groupId>
+					    <artifactId>jaxb-fluent-api</artifactId>
+					    <version>2.1.8</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			</plugins>
+	</build>
+</project>
